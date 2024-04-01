@@ -6,6 +6,14 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  var moonTotal = data.planets
+  .reduce(function(total, list){
+    if (list.moons){
+      total += list.moons.length;
+    }
+    return total;
+  }, 0);
+  return moonTotal;
 }
 
 

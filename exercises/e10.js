@@ -6,6 +6,14 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
+  var foundAsteroid = data.asteroids
+  .filter(function(isAsteroid){
+    return isAsteroid.name == asteroidName;
+  })
+  .reduce(function(justAsteroid){
+    return justAsteroid;
+  });
+  return foundAsteroid;
 }
 
 
