@@ -6,20 +6,12 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
-    var planetName = data.planets
-    .filter(function(hasMoon){
-      if (hasMoon.moonsCount > 0){
-        return hasMoon.moons.includes(moonName);
-      }
-    })
-    .map(function(planet){
-      return planet.name;
-    })
-    .reduce(function(name){
-      return name.name;
-    });
-    return planetName;
-}
+    return data.planets
+    .filter((hasMoon) => hasMoon.moonsCount > 0)
+    .filter((thisMoon) => thisMoon.moons.find((moon) => moon == moonName))
+    .map((planet) => planet.name)
+    .reduce((array) => array.name);
+    }
 
 
 

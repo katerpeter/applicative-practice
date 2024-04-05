@@ -6,14 +6,9 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
-  var planetNames = data.planets
-  .filter(function(isEarth){
-    return isEarth.name == 'Earth';
-  })
-  .reduce(function(justEarth){
-    return justEarth;
-  });
-  return planetNames;
+  return data.planets
+  .filter((isEarth)=> isEarth.name == 'Earth')
+  .reduce((justEarth) => justEarth);
 }
 
 
